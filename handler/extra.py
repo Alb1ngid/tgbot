@@ -25,7 +25,7 @@ async def echo(massage: types.Message):
 def reg_handler_extra(dp: Dispatcher):
     dp.register_message_handler(echo)
 
-#
+
 # async def echo1(massage: types.Message):
 #     bad_words = ['java', 'html', 'идиот', 'css', 'сколько ты зарабатываешь']
 #     if massage.text in bad_words:

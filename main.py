@@ -3,10 +3,11 @@ import logging
 
 from config import dp
 
-from handler import client,callback,extra,admin
+from handler import client,callback,extra,admin,fsm_anketa
 client.reg_client(dp)
 callback.reg_handler_call(dp)
-admin.reg_hand_admin()
+admin.reg_hand_admin(dp)
+fsm_anketa.reg_hand_anketa(dp)
 
 
 extra.reg_handler_extra(dp)

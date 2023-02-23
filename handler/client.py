@@ -2,14 +2,15 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import bot, dp
-
+from keybord.client_kb import start_markup #import keyboard
 
 # @dp.message_handler(commands=['start', 'help'])
 async def start_handler(massage: types.Message):
-    await bot.send_message(massage.from_user.id, f"hi {massage.from_user.first_name}")
+    await bot.send_message(massage.from_user.id, f"hi {massage.from_user.first_name}",
+    reply_markup=start_markup) # activate
 
-    await massage.answer("это чтото")  # альт способ смс
-    await massage.reply('это репл')  # ответ на смс
+    # await massage.answer("это чтото")  # альт способ смс
+    # await massage.reply('это репл')  # ответ на смс
 
 async def info_handler(massage:types.Message):
     await massage.answer('инфо')
