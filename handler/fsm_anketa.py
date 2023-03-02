@@ -5,6 +5,8 @@ from aiogram.dispatcher.filters import Text
 from keybord.client_kb import start_markup
 from keybord import client_kb # импорт кнопочек
 
+from datdbase.bot_db import sql_command_insert #4
+
 class FSMAdmin(StatesGroup):
     name = State()
     age = State()
@@ -79,8 +81,7 @@ async def load_photo(massage: types.Message, state: FSMContext):
 
 async def submit(massage: types.Message, state: FSMContext):
     if massage.text.lower() == "да":
-        await massage.answer('данные сохранены',reply_markup=start_markup)
-    #     запись бд
+        await sql_command_insert(state)
         await state.finish()
     elif massage.text == "миш все фигня давай по новой":
         await massage.answer("name?", reply_markup=start_markup, )

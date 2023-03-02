@@ -1,5 +1,6 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
+
 start_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,  # размер
     one_time_keyboard=True  # скрыть кнопку
@@ -34,13 +35,13 @@ gender_markup =ReplyKeyboardMarkup(
     KeyboardButton("мужчина"),
     KeyboardButton("jенщина"),
     KeyboardButton("не принадлежу стандартной гендерной ориентации"),
-    KeyboardButton("cancel")
+    cancel
 )
 
 cancel_markup =ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True
 ).add(
-    KeyboardButton("cancel"),
+    cancel
 
 )
